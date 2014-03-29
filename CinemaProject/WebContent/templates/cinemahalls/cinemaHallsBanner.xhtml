@@ -25,13 +25,13 @@
 
 <h:body>
    <p><h:outputText style="color:brown" value="#{msg.cinemaHallLabel1} "/><h:outputText value="#{msg.cinemaHallLabel2}"/></p>
-   <c:forEach items="#{filmsBean.cinemaHallList}" var="cinemaList">
-       <h2><h:outputText style="color:brown" value="Кинозал № #{cinemaList.cinemaHallID}"/></h2>
-       <p><h:outputText value="Кинозал № #{cinemaList.cinemaHallID} рассчитан на #{cinemaList.numberOfPlacesInHall} мест."/></p>
-        <c:forEach var="i" begin="1" end="#{cinemaList.numberOfRows}">
+   <c:forEach items="#{othersBean.listOfCinemahalls}" var="cinema">
+       <h2><h:outputText style="color:brown" value="Кинозал № #{cinema.cinemaHallID}"/></h2>
+       <p><h:outputText value="Кинозал № #{cinema.cinemaHallID} рассчитан на #{cinema.countOfPlacesInHall} мест."/></p>
+        <c:forEach var="i" begin="1" end="#{cinema.countOfRows}">
             <p>
                 <h:outputText value="Ряд #{i} "/>
-                <c:forEach var="j" begin="1" end="#{cinemaList.numberOfPlacesInHall/cinemaList.numberOfRows}">
+                <c:forEach var="j" begin="1" end="#{cinema.countOfPlacesInHall/cinema.countOfRows}">
                     <h:commandButton styleClass="button-small" value="#{j}" />
                 </c:forEach>
             </p>

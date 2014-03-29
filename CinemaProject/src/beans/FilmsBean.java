@@ -23,12 +23,4 @@ public class FilmsBean implements Serializable {
 		filmsList = filmAction.getListOfFilms();
 		return filmsList;
 	}
-
-	public void setFilmsList(List<Film> filmsList) {
-		this.filmsList = filmsList;
-	}
-	
-	public String selectAllFilms(){
-		return "/schedule.xhtml";
-	}
 }
